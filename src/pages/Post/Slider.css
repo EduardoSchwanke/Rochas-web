@@ -1,0 +1,27 @@
+.swiper-pagination-bullet-active{
+    box-shadow: 1px 1px 3px rgb(87, 87, 87);
+}
+
+.swiper-button-prev{
+    position: absolute;
+    text-shadow: 2px 2px 4px rgb(87, 87, 87);
+    padding: 20px;
+    top: 0 !important;
+    height: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    color: rgb(39, 87, 199) !important;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.swiper-button-next{
+    position: absolute;
+    text-shadow: 2px 2px 4px rgb(87, 87, 87);
+    padding: 20px;
+    top: 0 !important;
+    height: 100% !important;
+    right: 0 !important;
+    margin-top: 0 !important;
+    color: rgb(39, 87, 199) !important;
+    background-color: rgba(0, 0, 0, .5);
+}
