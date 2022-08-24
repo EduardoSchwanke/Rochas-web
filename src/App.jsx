@@ -10,15 +10,11 @@ import { Login } from "./pages/Login";
 import { DashboardPost } from "./pages/DashboardPost";
 import { Sedimentos } from "./pages/Sedimentos";
 
-import { useContext } from "react"
-import { UserContext } from "./contexts/UserContext"
 import { Ignea } from "./pages/Ignea";
 import { Metaforfica } from "./pages/Metaforfica";
 
 
 export function App() {
-
-  const { login } = useContext(UserContext)
 
   return (
     <BrowserRouter>
