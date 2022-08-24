@@ -3,12 +3,7 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { HiOutlineClipboardList } from "react-icons/hi";
 
-import { useContext } from "react"
-import { NavContext } from "../../contexts/NavContext"
-
 export function Sidebar(){
-
-    const { setNav } = useContext(NavContext)
 
     return (
         <div className="flex flex-col items-center justify-evenly w-20 h-[100vh] bg-zinc-100 fixed border-r-[1px]">
