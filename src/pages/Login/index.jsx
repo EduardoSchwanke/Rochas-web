@@ -1,33 +1,8 @@
-import { useContext } from "react"
 import { useState } from "react"
-import { UserContext } from "../../contexts/UserContext"
 import api from '../../services/api'
 import { useNavigate  } from 'react-router-dom';
 
 export function Login() {
-    const navigate = useNavigate();
-    const { setLogin } = useContext(UserContext)
-
-    const [name, setName] = useState('')
-    const [password, setPassword] = useState('')
-
-    async function validatedUser(e) {
-        e.preventDefault()
-
-        const user = {
-            name,
-            password
-        }
-
-        try{
-            await api.post('/user', user)
-
-            setLogin(true)
-            navigate('/createpost')
-        }catch(err){
-            alert('usuario ou senha incorretos')
-        }
-    }
 
     return (
         <div className="h-[100vh] w-full flex justify-center items-center bg-blue-100">
