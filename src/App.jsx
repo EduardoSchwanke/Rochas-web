@@ -26,8 +26,7 @@ export function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/createpost" element={
-          //!login ? <h1>error</h1> : <DashboardPost />
-          <DashboardPost/>
+            !login ? <h1>error</h1> : <DashboardPost />
         }></Route>
         <Route path="/post/:id" element={<Post />}></Route>
         <Route path="/sedimentos" element={<Sedimentos />}></Route>
