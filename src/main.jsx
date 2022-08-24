@@ -9,9 +9,7 @@ import { NavContextProvider } from "./contexts/NavContext";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserContextProvider>
     <NavContextProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </NavContextProvider>
   </UserContextProvider>
 )

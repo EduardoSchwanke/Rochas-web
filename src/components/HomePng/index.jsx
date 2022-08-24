@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+
+
 import oneUrl from '../../images/1-removebg-preview.png'
 import twoUrl from '../../images/2-removebg-preview.png'
 import threeUrl from '../../images/3-removebg-preview.png'
@@ -22,9 +26,9 @@ const ContainerImg = styled.div`
 
 export function HomePng() {
     return (
-        <section className='w-[60%] flex flex-col items-center gap-14'>
+        <section className='w-[50%] flex flex-col items-center gap-14 pr-8 xl:w-[60%] lm:w-[50%] lm:pr-16 md:w-full md:p-0'>
 
-            <div className='flex'>
+            <div className='flex md:hidden'>
                 <div className='relative flex flex-col justify-between mx-8 row-start-1 rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={oneUrl}></ContainerImg>
@@ -37,14 +41,14 @@ export function HomePng() {
                     <p className=''>lorem ipsum</p>
                 </div>
 
-                <div className='relative mx-8 flex flex-col justify-between row-start-2 rounded p-2 cursor-pointer hover:scale-110  transition-all hover:bg-white hover:shadow-lg'>
+                <div className='relative mx-8 flex flex-col justify-between row-start-2 rounded p-2 cursor-pointer hover:scale-110  transition-all hover:bg-white hover:shadow-lg lm:hidden'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={threeUrl}></ContainerImg>
                     <p className=''>lorem ipsum</p>
                 </div>
             </div>
 
-            <div className='flex'>
+            <div className='flex md:hidden'>
                 <div className='w-36 h-36'></div>
                 <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
@@ -57,7 +61,7 @@ export function HomePng() {
                     <p className=''>lorem ipsum</p>
                 </div>
 
-                <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg'>
+                <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg lm:hidden'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={sixUrl}></ContainerImg>
                     <p className=''>lorem ipsum</p>
@@ -65,7 +69,7 @@ export function HomePng() {
             </div>
 
             
-            <div className='flex'>
+            <div className='flex md:hidden'>
                 <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={sevenUrl}></ContainerImg>
@@ -78,14 +82,14 @@ export function HomePng() {
                     <p className=''>lorem ipsum</p>
                 </div>
 
-                <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg'>
+                <div className='relative flex flex-col mx-8 justify-between rounded p-2 cursor-pointer hover:scale-110 transition-all hover:bg-white hover:shadow-lg lm:hidden'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={nineUrl}></ContainerImg>
                     <p className=''>lorem ipsum</p>
                 </div>
             </div>
 
-            <div className='flex'>
+            <div className='flex md:hidden'>
                 <div className='w-36 h-36'></div>
                 <div className='relative mx-8 flex flex-col justify-between rounded p-2 cursor-pointer hover:scale-110  transition-all hover:bg-white hover:shadow-lg'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
@@ -98,7 +102,7 @@ export function HomePng() {
                     <p className=''>lorem ipsum</p>
                 </div>
 
-                <div className='relative mx-8 flex flex-col justify-between rounded p-2 cursor-pointer hover:scale-110  transition-all hover:bg-white hover:shadow-lg'>
+                <div className='relative mx-8 flex flex-col justify-between rounded p-2 cursor-pointer hover:scale-110  transition-all hover:bg-white hover:shadow-lg lm:hidden'>
                     <BiLinkExternal className='absolute right-1 top-1 text-zinc-500'/>
                     <ContainerImg url={threeUrl}></ContainerImg>
                     <p className=''>lorem ipsum</p>

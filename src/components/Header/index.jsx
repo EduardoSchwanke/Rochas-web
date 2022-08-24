@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom'
 
 export function Header(props) {
 
     const scroll = props.scroll
 
     return (
-        <header className={`fixed z-50 top-0 w-full h-16  px-[2%] flex items-center justify-evenly ${(scroll > 30 && 'shadow-md bg-[#fafafa]')} transition-all opacity-[.98]`}>
+        <header className={`fixed z-50 top-0 w-full h-16  px-[2%] flex items-center justify-evenly ${(scroll > 30 && 'shadow-md bg-[#fafafa]')} transition-all opacity-[.98] md:hidden`}>
             
             {
                 (scroll > 820 && scroll < 1420) ? (
