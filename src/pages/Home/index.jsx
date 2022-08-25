@@ -6,12 +6,14 @@ import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
 
 import styled from 'styled-components';
-import igneaImg from '../../../src/images/bg-1.png'
+import igneaImg from '../../../src/images/a.png'
+import metaforficaImg from '../../../src/images/b.png'
+import sedimentarImg from '../../../src/images/c.png'
 
 const Div = styled.div`
     width: 100vw;
     height: 100vh;
-    background-image: url(${igneaImg});
+    background-image: url(${props => props.img});
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 200%;
@@ -28,7 +30,7 @@ export function Home() {
             <Swiper modules={[Navigation, Pagination]} navigation={false}  pagination={false} slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className=" bg-yellow-100 z-10">
-                        <Div> 
+                        <Div img={igneaImg}> 
                             <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Ignea</h1>
                         </Div>
                     </section>
@@ -36,17 +38,17 @@ export function Home() {
 
                 <SwiperSlide className='h-[100vh]'>
                     <section id="metaforfica" className=" bg-green-100 z-10">
-                        <div className="h-[100vh] w-[100vw] bg-metaforfica bg-no-repeat bg-bottom [background-size:200%]"> 
+                    <Div img={metaforficaImg}> 
                             <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Metaforfica</h1>
-                        </div>
+                        </Div>
                     </section>
                 </SwiperSlide>
 
                 <SwiperSlide className='h-[100vh]'>
                     <section id="sedimentar" className=" bg-red-100 z-10">
-                        <div className="h-[100vh] w-[100vw] bg-sedimentar bg-no-repeat bg-bottom [background-size:200%]"> 
+                    <Div img={sedimentarImg}> 
                             <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Sedimentar</h1>
-                        </div>
+                        </Div>
                     </section>
                 </SwiperSlide>
             </Swiper>
