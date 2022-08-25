@@ -6,6 +6,16 @@ import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
 
 import a from '../../../src/images/a.png'
+import styled from 'styled-components';
+
+const Div = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../src/images/bg-1.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 200%;
+`
 
 export function Home() {
     return (
@@ -15,14 +25,12 @@ export function Home() {
                 <span>v</span>
             </header> 
 
-            <img src={a} alt="" className='z-30 max-w-3xl'/>
-
             <Swiper modules={[Navigation, Pagination]} navigation={false}  pagination={false} slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className=" bg-yellow-100 z-10">
-                        <div className="h-[100vh] w-[100vw] bg-ignea bg-no-repeat bg-bottom [background-size:200%]"> 
+                        <Div> 
                             <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Ignea</h1>
-                        </div>
+                        </Div>
                     </section>
                 </SwiperSlide>
 
