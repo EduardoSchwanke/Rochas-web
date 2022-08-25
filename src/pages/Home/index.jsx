@@ -5,13 +5,13 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
 
-import a from '../../../src/images/a.png'
 import styled from 'styled-components';
+import igneaImg from '../../../src/images/bg-1.png'
 
 const Div = styled.div`
     width: 100vw;
     height: 100vh;
-    background-image: url('../../../src/images/bg-1.png');
+    background-image: url(${igneaImg});
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 200%;
