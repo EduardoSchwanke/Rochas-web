@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.jsx"],
   theme: {
     backgroundImage: {
-      'ignea': "url('../..images/bg-3.png')",
+      'ignea': "url('../../../src/images/bg-3.png')",
       'metaforfica': "url('../../../src/images/bg-1.png')",
       'sedimentar': "url('../../../src/images/bg-2.png')",
     },

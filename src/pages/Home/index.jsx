@@ -5,7 +5,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
 
-
+import a from '../../../src/images/a.png'
 
 export function Home() {
     return (
@@ -14,6 +14,8 @@ export function Home() {
                 <span>Ignea</span>
                 <span>v</span>
             </header> 
+
+            <img src={a} alt="" className='z-30 max-w-3xl'/>
 
             <Swiper modules={[Navigation, Pagination]} navigation={false}  pagination={false} slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
