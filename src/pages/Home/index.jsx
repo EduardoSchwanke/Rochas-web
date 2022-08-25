@@ -22,7 +22,7 @@ const Div = styled.div`
 export function Home() {
     return (
         <>
-            <header className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-zinc-50 drop-shadow-md z-20 fixed`}>
+            <header className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-yellow-50 drop-shadow-md z-20 fixed`}>
                 <span>Ignea</span>
                 <span>v</span>
             </header> 
@@ -32,6 +32,7 @@ export function Home() {
                     <section id="ignea" className=" bg-yellow-100 z-10">
                         <Div img={igneaImg}> 
                             <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Ignea</h1>
+                            <p className='p-4 pl-16 leading-5 text-justify'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                         </Div>
                     </section>
                 </SwiperSlide>
