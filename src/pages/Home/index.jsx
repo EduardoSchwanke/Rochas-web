@@ -21,6 +21,7 @@ const Div = styled.div`
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 200%;
+    z-index: 30;
 `
 
 export function Home() {
@@ -33,14 +34,15 @@ export function Home() {
 
             <Swiper modules={[Navigation, Pagination]} navigation={false}  pagination={false} slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
-                    <section id="ignea" className=" bg-yellow-100 z-10">
+                    <section id="ignea" className=" bg-yellow-100 z-10 relative">
                         <Div img={igneaImg} className="relative flex items-center flex-col"> 
-                            <GiMountaintop className="absolute top-[90px] left-3 text-2xl"/>
-                            <BsArrowRightCircle className='absolute top-[90px] right-3 text-2xl'/>
+                            <GiMountaintop className="absolute top-[90px] left-3 text-3xl"/>
+                            <BsArrowRightCircle className='absolute top-[90px] right-3 text-3xl'/>
                             <h1 className='text-center text-3xl pt-20 pb-6 drop-shadow-lg text-zinc-700'>Ignea</h1>
                             <p className='p-4 pl-16 leading-5 text-justify'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                             <IoChevronDown className='absolute bottom-5 text-white text-3xl animate-bounce'/>
                         </Div>
+                        <div className='w-[2px] h-[80vh] bg-zinc-600 absolute left-6 top-[140px]'></div>
                     </section>
                 </SwiperSlide>
 
