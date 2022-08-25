@@ -1,4 +1,8 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { BsArrowRightCircle } from "react-icons/bs";
+import { IoChevronDown } from "react-icons/io5";
+import { GiMountaintop } from "react-icons/gi";
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -30,9 +34,12 @@ export function Home() {
             <Swiper modules={[Navigation, Pagination]} navigation={false}  pagination={false} slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className=" bg-yellow-100 z-10">
-                        <Div img={igneaImg}> 
-                            <h1 className='text-center text-3xl pt-20 drop-shadow-lg text-zinc-700'>Ignea</h1>
+                        <Div img={igneaImg} className="relative flex items-center flex-col"> 
+                            <GiMountaintop className="absolute top-[90px] left-3 text-2xl"/>
+                            <BsArrowRightCircle className='absolute top-[90px] right-3 text-2xl'/>
+                            <h1 className='text-center text-3xl pt-20 pb-6 drop-shadow-lg text-zinc-700'>Ignea</h1>
                             <p className='p-4 pl-16 leading-5 text-justify'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
+                            <IoChevronDown className='absolute bottom-5 text-white text-3xl animate-bounce'/>
                         </Div>
                     </section>
                 </SwiperSlide>
