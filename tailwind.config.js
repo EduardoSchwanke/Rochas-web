@@ -3,13 +3,13 @@ module.exports = {
   content: ["./src/**/*.jsx"],
   theme: {
     backgroundImage: {
-      'ignea': "url('../../../src/images/bg-3.png')",
+      'ignea': "url('../..images/bg-3.png')",
       'metaforfica': "url('../../../src/images/bg-1.png')",
       'sedimentar': "url('../../../src/images/bg-2.png')",
     },
     extend: {
       dropShadow: {
-        'styled': '2px 2px 4px rgba(0, 0, 0, 1)',
+        'styled': '2px 2px 4px rgba(0, 0, 0, 1)', 
       }
     },
     screens: {

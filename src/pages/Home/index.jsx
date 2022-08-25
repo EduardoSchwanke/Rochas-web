@@ -5,6 +5,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
 
+
+
 export function Home() {
     return (
         <>
