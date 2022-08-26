@@ -27,12 +27,12 @@ const Div = styled.div`
 export function Home() {
     return (
         <>
-            <header className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-yellow-50 drop-shadow-md z-20 fixed`}>
+            <header className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-white drop-shadow-md z-20 fixed`}>
                 <span>Ignea</span>
                 <IoChevronDown className='text-2xl pt-1'/>
             </header> 
 
-            <Swiper slidesPerView={1} direction={'vertical'} progressbar spaceBetween={0} mousewheel={true} className="h-[100vh]">
+            <Swiper slidesPerView={1} direction={'vertical'} spaceBetween={0} mousewheel={true} className="h-[100vh]">
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className=" bg-yellow-100 z-10 relative h-[100vh]">
                         <Div img={igneaImg} className="h-[100vh] relative flex items-center flex-col"> 
@@ -42,7 +42,7 @@ export function Home() {
                             <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                             <IoChevronDown className='absolute bottom-16 text-white text-3xl animate-bounce'/>
                         </Div>
-                        <div className='w-[2px] h-[80vh] bg-zinc-600 absolute left-6 top-[140px]'></div>
+                        <div className='w-[2px] h-[90vh] bg-zinc-600 absolute left-6 top-[140px]'></div>
                     </section>
                 </SwiperSlide>
 
