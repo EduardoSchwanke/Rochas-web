@@ -33,10 +33,10 @@ export function Home() {
                 <span>v</span>
             </header> 
 
-            <Swiper slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-[100vh]">
-                <SwiperSlide className='h-[100vh]'>
+            <Swiper slidesPerView={1} direction={'vertical'} spaceBetween={0} className="h-full">
+                <SwiperSlide className='h-full'>
                     <section id="ignea" className=" bg-yellow-100 z-10 relative">
-                        <Div img={igneaImg} className="h-[100vh] relative flex items-center flex-col"> 
+                        <Div img={igneaImg} className="h-full relative flex items-center flex-col"> 
                             <GiMountaintop className="absolute top-[90px] left-3 text-3xl"/>
                             <BsArrowRightCircle className='absolute top-[90px] right-3 text-3xl'/>
                             <h1 className='text-center text-3xl pt-20 pb-6 drop-shadow-lg text-zinc-700'>Ignea</h1>
