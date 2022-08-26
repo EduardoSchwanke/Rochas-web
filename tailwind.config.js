@@ -9,7 +9,7 @@ module.exports = {
     },
     extend: {
       dropShadow: {
-        'styled': '2px 2px 4px rgba(0, 0, 0, 1)', 
+        'styled': '1px 1px rgba(266, 266, 266, 1)', 
       }
     },
     screens: {
