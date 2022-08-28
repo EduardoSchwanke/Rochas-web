@@ -7,6 +7,7 @@ import { GiMountains } from "react-icons/gi";
 import { RiMenu3Line } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
