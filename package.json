@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.6.0",
     "axios": "^0.27.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -16,6 +17,7 @@
     "react-image-gallery": "^1.2.8",
     "react-router-dom": "^6.3.0",
     "react-slideshow-image": "^4.0.4",
+    "react-threejs": "^0.0.4",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2"
   },

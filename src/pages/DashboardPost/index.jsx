@@ -6,6 +6,8 @@ import { Delete } from "../../components/Delete"
 
 export function DashboardPost() {
 
+    const nav = 'create'
+
     return (
         <>
             <Sidebar/>
