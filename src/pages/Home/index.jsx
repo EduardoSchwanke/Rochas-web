@@ -77,12 +77,12 @@ export function Home() {
                     <section id="ignea" className="h-[100vh] flex flex-col gap-4 pt-24">
                         <h1 className='text-3xl px-[2%]'>Rochas</h1>
                         <p className='px-[2%]'>Lorem ipsum dolor sit amet, consectetur Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
-                        <Canvas>
+                        <Canvas className='drop-shadow-h'>
                             <ambientLight intensity={1}/>
                             <Mymesh />
                         </Canvas>
                     </section>
-                    <div className='flex w-[150vw] h-96 absolute bottom-[-250px] left-[-25%] justify-center bg-white rounded-full'>
+                    <div className='flex w-[150vw] h-96 absolute bottom-[-250px] left-[-25%] justify-center bg-white rounded-full drop-shadow-h'>
                         <IoChevronDown className='text-black text-3xl animate-bounce mt-5'/>
                     </div>
                 </SwiperSlide>
