@@ -20,13 +20,14 @@ import sedimentarImg from '../../../src/images/bg-2.png'
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { Mymesh } from '../../components/Mymesh';
 
 const Div = styled.div`
     width: 100vw;
     height: 100vh;
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom; 
     background-size: 200%;
     z-index: 30;
 `
@@ -34,6 +35,7 @@ const Div = styled.div`
 export function Home() {
 
     const [handleMenu, setHandleMenu] = useState(false)
+    
 
     return (
         <>
@@ -72,20 +74,16 @@ export function Home() {
             <Swiper slidesPerView={1} direction={'vertical'} spaceBetween={0} mousewheel={true} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
 
                 <SwiperSlide className='h-[100vh]'>
-                    <section id="ignea" className="relative h-[100vh] flex flex-col gap-4 pt-24 px-[2%]">
-                        <h1 className='text-3xl'>Rochas</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget volutpat arcu. Nulla id neque ac sapien tempor eleifend quis in libero. Vestibulum et pellentesque justo. Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
-                        <Canvas className='h-72'>
-                            <ambientLight intensity={0.5}/>
-                            <directionalLight position={[-2, 5, 2]} intensity={1}/>
-                            <mesh rotation={[90, 0, 20]}>
-                                <boxBufferGeometry attach="geometry" args={[3, 3, 3]}/>
-                                <meshLambertMaterial attach="material" color="blue"/>
-                            </mesh>
+                    <section id="ignea" className="h-[100vh] flex flex-col gap-4 pt-24">
+                        <h1 className='text-3xl px-[2%]'>Rochas</h1>
+                        <p className='px-[2%]'>Lorem ipsum dolor sit amet, consectetur Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
+                        <Canvas>
+                            <ambientLight intensity={1}/>
+                            <Mymesh />
                         </Canvas>
                     </section>
-                    <div className='flex w-full absolute bottom-16 justify-center'>
-                        <IoChevronDown className='text-black text-3xl animate-bounce'/>
+                    <div className='flex w-[150vw] h-96 absolute bottom-[-250px] left-[-25%] justify-center bg-white rounded-full'>
+                        <IoChevronDown className='text-black text-3xl animate-bounce mt-5'/>
                     </div>
                 </SwiperSlide>
                 
