@@ -8,11 +8,10 @@ import styled from 'styled-components';
 import { RiMenu3Line } from 'react-icons/ri';
 
 const Div = styled.div`
-    width: 96%;
-    height: 208px;
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 `
 
 export function Sedimentos() {
@@ -65,16 +64,16 @@ export function Sedimentos() {
                 )
             }
 
-            <div className='flex w-full h-24 items-center justify-center'>
+            <div className={`flex w-full h-24 items-center justify-center ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 <h1 className='text-3xl text-zinc-700'>Rochas sedimentares</h1>
             </div>
 
-            <div className='flex justify-evenly flex-wrap gap-7 pr-[2%] pl-[2%]'>
+            <div className={`flex justify-evenly flex-wrap pr-[2%] pl-[2%] gap-2 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 {
                     sedimentos.map((post) => {
                         if(post.type === 'sedimento'){
                             return (
-                                <Div img={url + post.photo[0]} className={`w-[96%] h-52 bg-[$] rounded`} key={post._id}>
+                                <Div img={url + post.photo[0]} className={`w-[96%] h-52 rounded smin:w-[48%]`} key={post._id}>
                                     <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
                                         <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
                                         <p className='text-white drop-shadow-black line-clamp-3 p-2 font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
