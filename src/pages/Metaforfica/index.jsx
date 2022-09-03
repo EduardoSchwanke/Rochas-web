@@ -20,7 +20,7 @@ export function Metaforfica() {
     const [handleMenu, setHandleMenu] = useState(false)
     const [metaforfica, setMetaforfica] = useState([]) 
 
-    const url = 'http://localhost:3333/files/'
+    const url = 'https://rochas-server-production.up.railway.app/files/'
 
     useEffect(()=> {
         async function getPots(){
