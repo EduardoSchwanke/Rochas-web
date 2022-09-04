@@ -21,6 +21,7 @@ import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { Mymesh } from '../../components/Mymesh';
+import { Navigation, Pagination, Scrollbar } from 'swiper';
 
 const Div = styled.div`
     width: 100vw;
@@ -71,7 +72,7 @@ export function Home() {
                 )
             }
 
-            <Swiper slidesPerView={1} direction={'vertical'} spaceBetween={0} mousewheel={true} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <Swiper modules={[Navigation, Pagination, Scrollbar]} cssMode={true} pagination={false} slidesPerView={1} direction={'vertical'} navigation={false} spaceBetween={0} mousewheel={true} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
 
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className="h-[100vh] flex flex-col gap-4 pt-24">

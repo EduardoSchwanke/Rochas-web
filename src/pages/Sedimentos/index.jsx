@@ -74,10 +74,12 @@ export function Sedimentos() {
                         if(post.type === 'sedimento'){
                             return (
                                 <Div img={url + post.photo[0]} className={`w-[96%] h-52 rounded smin:w-[48%]`} key={post._id}>
-                                    <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
-                                        <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
-                                        <p className='text-white drop-shadow-black line-clamp-3 p-2 font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
-                                    </div>
+                                    <Link to={`/post/${post._id}`} key={post._id}>
+                                        <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
+                                            <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
+                                            <p className='text-white drop-shadow-black line-clamp-3 p-2 font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
+                                        </div>
+                                    </Link>
                                 </Div>
                             )
                         }

@@ -13,6 +13,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper';
+import { RiMenu3Line } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const ContainerImg = styled.div`
     width: 500px;
@@ -24,6 +26,8 @@ const ContainerImg = styled.div`
 `
 
 export function Post() {
+
+    const [handleMenu, setHandleMenu] = useState(false)
     const location = useLocation() 
     const locationId = location.pathname.split('/')[2]
     const ur = 'http://localhost:3333/files/'
@@ -40,35 +44,42 @@ export function Post() {
 
     return (
 
-        <div className='bg-zinc-50'>
-            <header className='flex w-full h-14 bg-blue-400 flex items-center px-[2%] text-white text-3xl'>
-                <Link to='/' className='w-[20%]'>Rochas</Link>
-                <ul className='text-base flex gap-16 w-[80%] justify-center'>
-                    <Link to="/Ignea" className='h-7 flex items-center flex-col group justify-between curos'>
-                        <p className='text-white text-base'>Ignea</p>
-                        <div className='w-0 h-[1px] bg-white group-hover:w-[80%] transition-all'></div>
-                    </Link> 
+        <div className='bg-zinc-50 overflow-hidden'>
+            
 
-                    <Link to="/metaforfica" className='h-7 flex items-center flex-col group justify-between curos'>
-                        <p className='text-white text-base'>Metaforfica</p>
-                        <div className='w-0 h-[1px] bg-white group-hover:w-[80%] transition-all'></div>
-                    </Link> 
+            <header  className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-white drop-shadow-md z-20 fixed ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+                <span className='text-xl'>Home</span>
+                <RiMenu3Line 
+                    onClick={() => {
+                        setHandleMenu(!handleMenu)
+                    }}
+                    className='text-2xl pt-1'
+                />
+            </header> 
 
-                    <Link to="/sedimentos" className='h-7 flex items-center flex-col group justify-between curos'>
-                        <p className='text-white text-base'>Sedimentar</p>
-                        <div className='w-0 h-[1px] bg-white group-hover:w-[80%] transition-all'></div>
-                    </Link> 
-                </ul>    
-            </header>
             {
-                (fullImage != '') && (
-                    <div className={`fixed w-[100%] h-[100%] z-40 top-0 bg-zinc-300 bg-opacity-30`} onClick={() => setFullImage('')}>
-                        <div className='absolute top-[12%] right-[27%] z-50 text-blue-900 cursor-pointer p-1 text-xl px-2 py-1 bg-white rounded' onClick={() => setFullImage('')}>Close</div>
-                        <img src={`http://localhost:3333/files/${fullImage}`} alt="" className='absolute left-[25%] top-[10%] w-[50%] max-h-[80%] rounded ring-blue-700 ring-4 ring-offset-4' />
+                handleMenu && (
+                    <div className='h-[100vh] w-[100vw] bg-[rgba(0,0,0,.2)] absolute top-0 right-0 z-50 p-5'>
+                        <div className='h-[100vh] w-[80vw] bg-white absolute top-0 right-0 z-50 p-5'>
+                            <div>
+                                <AiOutlineClose 
+                                    onClick={() => {
+                                        setHandleMenu(!handleMenu)
+                                    }}
+                                    className='text-2xl'
+                                />
+                            </div>
+                            <ul className='flex flex-col gap-5 mt-7'>
+                                <Link to='/ignea' className='border-b-2 border-zinc-040 pb-2'>Ignea</Link>
+                                <Link to='/metaforfica' className='border-b-2 border-zinc-040 pb-2'>Metaforfica</Link>
+                                <Link to='/sedimentos' className='border-b-2 border-zinc-040 pb-2'>Sedimentar</Link>
+                            </ul>
+                        </div>
                     </div>
                 )
             }
-            <div className="flex flex-col gap-5 pt-3 items-left px-[5%] bg-gradient-to-r from-white to-blue-50">
+
+            <div className="flex flex-col gap-5 pt-3 items-left  bg-gradient-to-r from-white to-blue-50">
                 {
                     posts.map((post) => {
                         if(post._id === locationId){
@@ -81,13 +92,13 @@ export function Post() {
                                         (post.type === 'ignea') && '/Ignea' ||
                                         (post.type === 'metaforfica') && '/metaforfica'
                                     }
-                                    className="flex items-center gap-4"
+                                    className="flex items-center gap-4 pt-16"
                                     >
                                         <IoIosArrowRoundBack className='text-5xl cursor-pointer text-zinc-500'/>
-                                        <span className='text-zinc-500 text-sm'>15, agosto de 2022</span>
+                                        <span className='text-zinc-500 text-sm'>15 de agosto</span>
                                     </Link>
 
-                                    <Swiper modules={[Navigation, Pagination]} navigation={true}  pagination={true} className='w-[500px] rounded'>
+                                    <Swiper modules={[Navigation, Pagination]} navigation={true}  pagination={true} className='w-full'>
                                         {
                                             photos.map((photo) => {
                                                 const randomNumber = Math.floor((Math.random() * 1000) + 1);
@@ -102,11 +113,11 @@ export function Post() {
 
                                     
 
-                                    <div className='flex justify-between max-w-[664px] align-bottom'>
+                                    <div className='flex justify-between max-w-[664px] align-bottom px-[2%]'>
                                         <h2 className='text-4xl font-light'>{post.title}</h2>
                                     </div>
 
-                                    <div>
+                                    <div className='px-[2%]'>
                                         {description.map((parag) => {
                                             const randomNumber = Math.floor((Math.random() * 1000) + 1);
                                             return ( <p key={randomNumber} className='pb-2 max-w-[664px] first-letter:ml-[20px]'>{parag}</p> )
@@ -118,7 +129,7 @@ export function Post() {
                     })
                 }
             </div>
-            <div className="fixed w-[50%] h-[50%] bg-[url('../../../src/images/montanha.png')] bottom-0 right-0 bg-contain bg-no-repeat bg-right-bottom"></div>
+
             <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center bg-transparent'>
                 Copyright 2022 | Schwanke
             </footer>
