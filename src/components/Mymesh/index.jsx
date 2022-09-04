@@ -21,7 +21,7 @@ export function Mymesh() {
             <sphereGeometry args={[ 1, 32, 32 ]}/>
             <meshPhongMaterial />
             <meshStandardMaterial map={normalMap} normalMap={normalMap} metalness={0.4} roughness={0.7}/>
-            <OrbitControls enableZoom={false} enableRotate={true} panSpeed={0.5} rotateSpeed={0.1}/>
+            <OrbitControls enableZoom={false} enableRotate={true} panSpeed={1} rotateSpeed={0.3}/>
         </mesh>
     )
 }
