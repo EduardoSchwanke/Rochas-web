@@ -14,14 +14,13 @@ const Div = styled.div`
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 `
 
 export function Ignea() {
 
     const [handleMenu, setHandleMenu] = useState(false)
     const [ignea, setIgnea] = useState([]) 
-
-    const url = 'https://rochas-server-production.up.railway.app/files/'
 
     useEffect(()=> {
         async function getPots(){
@@ -75,7 +74,7 @@ export function Ignea() {
                     ignea.map((post) => {
                         if(post.type === 'ignea'){
                             return (
-                                <Div img={url + post.photo[0]} className={`w-[96%] h-52 rounded`} key={post._id}>
+                                <Div img={post.photo[0]} className={`w-[96%] h-52 rounded`} key={post._id}>
                                     <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
                                         <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
                                         <p className='text-white drop-shadow-black line-clamp-3 p-2 font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
@@ -87,7 +86,7 @@ export function Ignea() {
                 }
             </div>
 
-            <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-32'>
+            <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-6'>
                 Copyright 2022 | Schwanke
             </footer>
         </> 

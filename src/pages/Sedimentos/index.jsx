@@ -19,8 +19,6 @@ export function Sedimentos() {
     const [handleMenu, setHandleMenu] = useState(false)
     const [sedimentos, setSedimentos] = useState([]) 
 
-    const url = 'https://rochas-server-production.up.railway.app/files/'
-
     useEffect(()=> {
         async function getPots(){
             const res = await api.get('/posts')
@@ -73,7 +71,7 @@ export function Sedimentos() {
                     sedimentos.map((post) => {
                         if(post.type === 'sedimento'){
                             return (
-                                <Div img={url + post.photo[0]} className={`w-[96%] h-52 rounded smin:w-[48%]`} key={post._id}>
+                                <Div img={post.photo[0]} className={`w-[96%] h-52 rounded smin:w-[48%]`} key={post._id}>
                                     <Link to={`/post/${post._id}`} key={post._id}>
                                         <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
                                             <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
@@ -87,7 +85,7 @@ export function Sedimentos() {
                 }
             </div>
 
-            <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-24'>
+            <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-6'>
                 Copyright 2022 | Schwanke
             </footer>
         </> 

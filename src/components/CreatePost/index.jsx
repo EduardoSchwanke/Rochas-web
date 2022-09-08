@@ -8,10 +8,6 @@ export function CreatePost() {
     const [type, setType] = useState('')
     const [description, setDescription] = useState('')
     const [photo, setPhoto] = useState([])
-    
-    const url = 'https://rochas-server-production.up.railway.app/files/'
-    const [ uploadFiles, setUploadFiles ] = useState([])
-
 
     async function addPost(e) {
         e.preventDefault()
@@ -25,7 +21,7 @@ export function CreatePost() {
             type,
             photo
         }
-        
+
         try{ 
             const res = await api.post('/posts', post)
             alert(res.data)
@@ -35,7 +31,7 @@ export function CreatePost() {
         }
     }
 
-    function handleUpload(files) {
+    /*function handleUpload(files) {
         const uploadfile = files.map((file) => ({
             file,
             name: file.name,
@@ -56,7 +52,19 @@ export function CreatePost() {
         formData.append('photo', uploadedFile.file)
 
         const res = api.post('/postImage', formData)
-        console.log(res)
+    }*/
+
+
+    const convertBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+
+            const fileReader = new FileReader()
+            fileReader.readAsDataURL(file)
+
+            fileReader.onload = () => {
+                resolve(fileReader.result)
+            }
+        });   
     }
 
     return (
@@ -91,7 +99,18 @@ export function CreatePost() {
 
                     <div className="flex flex-col gap-3">
                         <label htmlFor="" className="text-2xl">Imagem principal</label>
-                        <Dropzone onDropAccepted={handleUpload}>
+                        <Dropzone onDropAccepted={async (e) => {
+                            const file = e
+                            const filesImg = []
+                            
+                            file.forEach(async (fileone) => {
+                                const base64 = await convertBase64(fileone)
+                                filesImg.push(base64)
+                            })
+
+                            setPhoto(filesImg)
+                            
+                        }}>
                             {
                                 ({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                                     <div {...getRootProps()} className='border-dashed border-zinc-400 border max-w-xl p-6'>
@@ -102,12 +121,7 @@ export function CreatePost() {
                             }
                         </Dropzone>
                         <ul className='flex flex-col gap-4'>
-                          {uploadFiles.map((file) => (
-                            <li key={file.name} className="flex items-center gap-9 border-b-2 border-zinc-300 max-w-sm">
-                                <img src={file.ur} alt="" className='w-16'/>
-                                <p>{file.name}</p>
-                            </li>
-                          ))}
+                          
                         </ul>
                     </div> 
 
@@ -117,12 +131,3 @@ export function CreatePost() {
         </div>
     )
 }
-
-
-/*
-    <input type="file" name="photo" onChange={(e) => {
-        setImage(e.target.files[0].name)
-        setImageBD(e.target.files[0])    
-    }}
-    />
-*/
