@@ -17,12 +17,12 @@ import { RiMenu3Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
 
 const ContainerImg = styled.div`
-    width: 500px;
+    width: 100%;
     height: 300px;
     background-image: url(${props => props.url});
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: center;
 `
 
 export function Post() {
@@ -30,7 +30,6 @@ export function Post() {
     const [handleMenu, setHandleMenu] = useState(false)
     const location = useLocation() 
     const locationId = location.pathname.split('/')[2]
-    const ur = 'http://localhost:3333/files/'
     const [posts, setPosts] = useState([]) 
     const [fullImage, setFullImage] = useState('')
  
@@ -104,7 +103,7 @@ export function Post() {
                                                 const randomNumber = Math.floor((Math.random() * 1000) + 1);
                                                 return (
                                                     <SwiperSlide key={randomNumber} onClick={() => setFullImage(photo)}>
-                                                        <ContainerImg url={ur + photo} ></ContainerImg>
+                                                        <ContainerImg url={photo} ></ContainerImg>
                                                     </SwiperSlide>
                                                 )
                                             })
@@ -129,6 +128,49 @@ export function Post() {
                     })
                 }
             </div>
+
+            {posts.length <= 0 &&
+                <div className={`flex justify-evenly mt-24 flex-wrap pr-[2%] pl-[2%] gap-2 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+                    <div class="border border-zinc-800 shadow rounded-md h-[70vh] w-[90vw] my-4">
+                        <div class="animate-pulse flex space-x-4">
+                            <div class="flex-1 space-y-6">
+                                <div class="space-y-3 p-5 flex flex-col just">
+                                <div class="h-2 bg-slate-700 rounded"></div>
+                                    <div class="grid grid-cols-3 gap-4">
+                                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-pulse flex space-x-4">
+                            <div class="flex-1 space-y-6">
+                                <div class="space-y-3 p-5 flex flex-col just">
+                                <div class="h-2 bg-slate-700 rounded"></div>
+                                    <div class="grid grid-cols-3 gap-4">
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-pulse flex space-x-4">
+                            <div class="flex-1 space-y-6">
+                                <div class="space-y-3 p-5 flex flex-col just">
+                                <div class="h-2 bg-slate-700 rounded"></div>
+                                    <div class="grid grid-cols-3 gap-4">
+                                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div class="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
 
             <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center bg-transparent'>
                 Copyright 2022 | Schwanke
