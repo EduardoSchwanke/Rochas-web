@@ -31,7 +31,7 @@ export function CreatePost() {
         }
     }
 
-    /*function handleUpload(files) {
+    function handleUpload(files) {
         const uploadfile = files.map((file) => ({
             file,
             name: file.name,
@@ -52,19 +52,6 @@ export function CreatePost() {
         formData.append('photo', uploadedFile.file)
 
         const res = api.post('/postImage', formData)
-    }*/
-
-
-    const convertBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-
-            const fileReader = new FileReader()
-            fileReader.readAsDataURL(file)
-
-            fileReader.onload = () => {
-                resolve(fileReader.result)
-            }
-        });   
     }
 
     return (
@@ -99,18 +86,7 @@ export function CreatePost() {
 
                     <div className="flex flex-col gap-3">
                         <label htmlFor="" className="text-2xl">Imagem principal</label>
-                        <Dropzone onDropAccepted={async (e) => {
-                            const file = e
-                            const filesImg = []
-                            
-                            file.forEach(async (fileone) => {
-                                const base64 = await convertBase64(fileone)
-                                filesImg.push(base64)
-                            })
-
-                            setPhoto(filesImg)
-                            
-                        }}>
+                        <Dropzone onDropAccepted={handleUpload}>
                             {
                                 ({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                                     <div {...getRootProps()} className='border-dashed border-zinc-400 border max-w-xl p-6'>

@@ -1,6 +1,6 @@
 import { useFrame, useLoader } from '@react-three/fiber'
 
-import Maptexture from '../../images/maptext.jpg'
+import Maptexture from '../../images/mapworld.jpg'
 import { TextureLoader } from 'three'
 import { useRef } from 'react'
 import { OrbitControls } from '@react-three/drei'
@@ -18,7 +18,7 @@ export function Mymesh() {
     })
     return(
         <>
-            <mesh ref={earthRef} scale={[3,3,3]}>
+            <mesh ref={earthRef} scale={[3,3,3]}> 
                 <sphereGeometry args={[ 1, 32, 32 ]}/>
                 <meshPhongMaterial />
                 <meshStandardMaterial map={normalMap} normalMap={normalMap} metalness={0.4} roughness={0.7}/>
