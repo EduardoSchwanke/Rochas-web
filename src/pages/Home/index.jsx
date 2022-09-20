@@ -82,7 +82,7 @@ export function Home() {
                         <p className='px-[2%]'>Lorem ipsum dolor sit amet, consectetur Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
                         
                     </section>
-                    <div className='flex w-[100vw] h-24 absolute bottom-0 justify-center bg-white drop-shadow-h'>
+                    <div className='flex w-[100vw] h-28 absolute bottom-0 justify-center bg-white drop-shadow-h'>
                         <IoChevronDown className='text-black text-3xl animate-bounce mt-5'/>
                     </div>
                 </SwiperSlide>
