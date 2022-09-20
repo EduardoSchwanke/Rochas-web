@@ -77,7 +77,7 @@ export function Sedimentos() {
                                     <Link to={`/post/${post._id}`} key={post._id}>
                                         <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
                                             <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
-                                            <p className='text-white drop-shadow-black line-clamp-3 p-2 font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
+                                            <p className='text-white drop-shadow-black line-clamp-3 p-2 pb-[0.4rem] font-light group-hover:underline group-hover:underline-offset-2'>{post.description}</p>
                                         </div>
                                     </Link>
                                 </Div>
