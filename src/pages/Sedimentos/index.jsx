@@ -73,7 +73,7 @@ export function Sedimentos() {
                     sedimentos.map((post) => {
                         if(post.type === 'sedimento'){
                             return (
-                                <Div img={post.photo[0]} className={`w-[96%] h-52 rounded smin:w-[46%] `} key={post._id}>
+                                <Div img={post.imgURL[0]} className={`w-[96%] h-52 rounded smin:w-[46%] `} key={post._id}>
                                     <Link to={`/post/${post._id}`} key={post._id}>
                                         <div className='w-full h-full bg-[rgba(0,0,0,.3)] flex flex-col justify-end'>
                                             <h2 className='text-2xl drop-shadow-black px-2 text-white'>{post.title}</h2>
@@ -87,83 +87,6 @@ export function Sedimentos() {
                     
                 }
             </div>
-
-            {sedimentos.length <= 0 &&
-                <div className={`flex justify-evenly flex-wrap pr-[2%] pl-[2%] gap-2 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
-                <div class="border border-zinc-800 shadow rounded-md h-52 w-[46%] my-4">
-                    <div class="animate-pulse flex space-x-4">
-                        <div class="flex-1 space-y-6">
-                            <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="grid grid-cols-3 gap-4">
-                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border border-zinc-800 shadow rounded-md h-52 w-[46%] my-4">
-                    <div class="animate-pulse flex space-x-4">
-                        <div class="flex-1 space-y-6">
-                            <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="grid grid-cols-3 gap-4">
-                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="border border-zinc-800 shadow rounded-md h-52 w-[46%] my-4">
-                    <div class="animate-pulse flex space-x-4">
-                        <div class="flex-1 space-y-6">
-                            <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="grid grid-cols-3 gap-4">
-                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="border border-zinc-800 shadow rounded-md h-52 w-[46%] my-4">
-                    <div class="animate-pulse flex space-x-4">
-                        <div class="flex-1 space-y-6">
-                            <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="grid grid-cols-3 gap-4">
-                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="border border-zinc-800 shadow rounded-md h-52 w-[46%] my-4">
-                    <div class="animate-pulse flex space-x-4">
-                        <div class="flex-1 space-y-6">
-                            <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="grid grid-cols-3 gap-4">
-                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            }
 
             <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-6'>
                 Copyright 2022 | Schwanke

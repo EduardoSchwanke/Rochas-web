@@ -2,14 +2,18 @@ import { useState } from 'react'
 import api from '../../services/api'
 
 import Dropzone from 'react-dropzone'
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import { storage } from '../../firebase'
 
 export function CreatePost() {
     const [title, setTitle] = useState('')
     const [type, setType] = useState('')
     const [description, setDescription] = useState('')
-    const [photo, setPhoto] = useState([])
+    const [imgURL, setImgURL] = useState([])
+    const [progresss, setProgress] = useState()
 
     async function addPost(e) {
+        console.log(imgURL)
         e.preventDefault()
         if(!title || ! type || !description){
            return alert('preencha todos os campos!')
@@ -19,19 +23,20 @@ export function CreatePost() {
             title,
             description,
             type,
-            photo
+            imgURL
         }
 
         try{ 
             const res = await api.post('/posts', post)
             alert(res.data)
             setTitle('')
+            setImgURL([])
         }catch(err){
             alert(err.message)
         }
     }
 
-    function handleUpload(files) {
+    /*function handleUpload(files) {
         const uploadfile = files.map((file) => ({
             file,
             name: file.name,
@@ -40,7 +45,7 @@ export function CreatePost() {
         }))
         
         const random = uploadfile.map(({name}) => {
-            return name
+            return name 
         })
         setPhoto(random)
         setUploadFiles(uploadfile)
@@ -52,6 +57,32 @@ export function CreatePost() {
         formData.append('photo', uploadedFile.file)
 
         const res = api.post('/postImage', formData)
+    }*/
+
+    function handleUpload(files) {
+        files.map((file) => {
+            const storageRef = ref(storage, `images/${file.name}`)
+            const uploadTask = uploadBytesResumable(storageRef, file)
+
+            uploadTask.on(
+                "state_changed",
+                snapshot => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    setProgress(progress)
+                },
+                error => {
+                    alert(error)
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then(url => {
+                        setImgURL((imgURL) => [
+                            ...imgURL,
+                            url
+                        ])
+                    })
+                }
+            )
+        })
     }
 
     return (
@@ -96,8 +127,11 @@ export function CreatePost() {
                                 )
                             }
                         </Dropzone>
+                        {!imgURL && <progress value={progresss} max="100" />}
                         <ul className='flex flex-col gap-4'>
-                          
+                          {imgURL && imgURL.map((url) => (
+                                <img key={url} src={url} alt="" className='w-24'/>
+                            ))}
                         </ul>
                     </div> 
 

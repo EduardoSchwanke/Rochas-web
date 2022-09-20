@@ -22,7 +22,7 @@ import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { Mymesh } from '../../components/Mymesh';
-import {  } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 
 const Div = styled.div`
     width: 100vw;
@@ -74,18 +74,18 @@ export function Home() {
                 )
             }
 
-            <Swiper cssMode={true} slidesPerView={1} direction={'vertical'} spaceBetween={0} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <Swiper modules={[Navigation, Pagination]} direction={'vertical'} cssMode={false} uniqueNavElements={1} slidesPerView={1} spaceBetween={0} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
 
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className="h-[100vh] flex flex-col gap-4 pt-24">
                         <h1 className='text-3xl px-[2%]'>Rochas</h1>
                         <p className='px-[2%]'>Lorem ipsum dolor sit amet, consectetur Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
-                        <Canvas className='drop-shadow-h'>
+                        <Canvas className='.noSwipingClass '>
                             <ambientLight intensity={1}/>
                             <Mymesh />
                         </Canvas>
                     </section>
-                    <div className='flex w-[150vw] h-96 absolute bottom-[-250px] left-[-25%] justify-center bg-white rounded-full drop-shadow-h'>
+                    <div className='flex w-[100vw] h-96 absolute bottom-[-250px] justify-center bg-white drop-shadow-h'>
                         <IoChevronDown className='text-black text-3xl animate-bounce mt-5'/>
                     </div>
                 </SwiperSlide>

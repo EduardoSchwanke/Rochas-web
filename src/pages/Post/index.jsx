@@ -83,7 +83,8 @@ export function Post() {
                     posts.map((post) => {
                         if(post._id === locationId){
                             const description = post.description.split('\n')
-                            const photos = post.photo
+                            const photos = post.imgURL
+                            console.log(photos)
                             return (
                                 <div key={post._id} className='flex flex-col gap-12 mb-16'>
                                     <Link to={
@@ -128,49 +129,6 @@ export function Post() {
                     })
                 }
             </div>
-
-            {posts.length <= 0 &&
-                <div className={`flex justify-evenly mt-24 flex-wrap pr-[2%] pl-[2%] gap-2 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
-                    <div class="border border-zinc-800 shadow rounded-md h-[70vh] w-[90vw] my-4">
-                        <div class="animate-pulse flex space-x-4">
-                            <div class="flex-1 space-y-6">
-                                <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                    </div>
-                                    <div class="h-2 bg-slate-700 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="animate-pulse flex space-x-4">
-                            <div class="flex-1 space-y-6">
-                                <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                    </div>
-                                    <div class="h-2 bg-slate-700 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="animate-pulse flex space-x-4">
-                            <div class="flex-1 space-y-6">
-                                <div class="space-y-3 p-5 flex flex-col just">
-                                <div class="h-2 bg-slate-700 rounded"></div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                    </div>
-                                    <div class="h-2 bg-slate-700 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
 
             <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center bg-transparent'>
                 Copyright 2022 | Schwanke
