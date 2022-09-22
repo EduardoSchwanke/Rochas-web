@@ -12,6 +12,7 @@ import { Sedimentos } from "./pages/Sedimentos";
 
 import { Ignea } from "./pages/Ignea";
 import { Metaforfica } from "./pages/Metaforfica";
+import { Switch } from "@headlessui/react";
 
 
 export function App() {
