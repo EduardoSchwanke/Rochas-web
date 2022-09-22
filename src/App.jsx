@@ -28,9 +28,7 @@ export function App() {
           <DashboardPost/>
         }></Route>
         <Route path="/post/:id" element={<Post />}></Route>
-        <Route path="/sedimentos">
-          <Redirect to="/sedimentos" />
-        </Route>
+        <Route path="/sedimentos" element={<Sedimentos />}></Route>
         <Route path="/ignea" element={<Ignea />}></Route>
         <Route path="/metaforfica" element={<Metaforfica />}></Route>
       </Routes>
