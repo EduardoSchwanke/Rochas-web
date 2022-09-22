@@ -5,6 +5,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Redirect
 } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { DashboardPost } from "./pages/DashboardPost";
