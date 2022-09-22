@@ -13,16 +13,17 @@ import { Canvas } from '@react-three/fiber'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import "swiper/css/scrollbar";
 
 import styled from 'styled-components';
-import igneaImg from '../../../src/images/bg-1.png'
+import igneaImg from '../../../src/images/b.png'
 import metaforficaImg from '../../../src/images/bg-3.png'
 import sedimentarImg from '../../../src/images/bg-2.png'
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { Mymesh } from '../../components/Mymesh';
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination, Parallax, Scrollbar } from 'swiper';
 
 const Div = styled.div`
     width: 100vw;
@@ -70,11 +71,12 @@ export function Home() {
                                 <Link to='/sedimentos' className='border-b-2 border-zinc-040 pb-2'>Sedimentar</Link>
                             </ul>
                         </div>
+                        <div className='h-[100vh] w-[20vw] bg-transparent fixed top-0 left-0 z-60' onClick={() => setHandleMenu(!handleMenu)}></div>
                     </div>
                 )
             }
 
-            <Swiper modules={[Navigation, Pagination]} direction={'vertical'} cssMode={false} uniqueNavElements={1} slidesPerView={1} spaceBetween={0} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <Swiper modules={[Navigation, Pagination, Scrollbar, Parallax]} scrollbar={{hide:true}} parallax={true} direction={'vertical'} cssMode={false} uniqueNavElements={1} slidesPerView={1} spaceBetween={0} className={`h-[100vh] ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
 
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className="h-[100vh] flex flex-col gap-4 pt-24">
@@ -90,10 +92,12 @@ export function Home() {
                 <SwiperSlide className='h-[100vh]'>
                     <section id="ignea" className=" bg-yellow-100 z-10 relative h-[100vh]">
                         <Div img={igneaImg} className="h-[100vh] relative flex items-center flex-col"> 
-                            <GiMountaintop className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-yellow-100"/>
-                            <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl'/>
-                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700'>Ignea</h1>
-                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
+                            <GiMountaintop className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-yellow-100" data-swiper-parallax="-500"/>
+                            <Link to="/ignea">
+                                <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl' data-swiper-parallax="-500"/>
+                            </Link> 
+                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700' data-swiper-parallax="-500">Ignea</h1>
+                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled' data-swiper-parallax="-500">This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                             <IoChevronDown className='absolute bottom-16 text-white text-3xl animate-bounce'/>
                         </Div>
                         <div className='w-[2px] h-[100vh] bg-zinc-600 absolute left-6 top-[65px] rounded-full'></div>
@@ -103,10 +107,12 @@ export function Home() {
                 <SwiperSlide className='h-[100vh]'>
                     <section id="metaforfica" className="bg-green-100 z-10 relative h-[100vh]">
                         <Div img={metaforficaImg} className="relative flex items-center flex-col"> 
-                            <GiMountains className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-green-100"/>
-                            <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl'/>
-                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700'>Metaforfica</h1>
-                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
+                            <GiMountains className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-green-100" data-swiper-parallax="-500"/>
+                            <Link to="/metaforfica">
+                                <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl' data-swiper-parallax="-500"/>
+                            </Link> 
+                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700' data-swiper-parallax="-500">Metaforfica</h1>
+                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled' data-swiper-parallax="-500">This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                             <IoChevronDown className='absolute bottom-16 text-white text-3xl animate-bounce'/>
                         </Div>
                         <div className='w-[2px] h-[100vh] bg-zinc-600 absolute left-6 top-[0] z-20'></div>
@@ -116,10 +122,12 @@ export function Home() {
                 <SwiperSlide className='h-[100vh]'>
                     <section id="sedimentar" className=" bg-red-100 z-10 relative">
                         <Div img={sedimentarImg} className="relative flex items-center flex-col"> 
-                            <GiMountaintop className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-red-100"/>
-                            <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl'/>
-                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700'>Sedimentar</h1>
-                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled'>This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
+                            <GiMountaintop className="absolute top-[85px] left-1 text-[2.8rem] py-2 bg-red-100" data-swiper-parallax="-500"/>
+                            <Link to="/sedimentos">
+                                <BsArrowRightCircle className='absolute top-[91px] right-3 text-3xl' data-swiper-parallax="-500"/>
+                            </Link> 
+                            <h1 className='text-center text-3xl pt-[85px] pb-6 drop-shadow-lg text-zinc-700' data-swiper-parallax="-500">Sedimentar</h1>
+                            <p className='p-4 pl-16 leading-5 text-justify drop-shadow-styled' data-swiper-parallax="-500">This button component has a primary state that changes its color. When setting the primary prop to true, we are swapping out its background and text color.</p>
                         </Div>
                         <div className='w-[2px] h-[100vh] bg-zinc-600 absolute left-6 top-[0] z-20'></div>
                     </section>

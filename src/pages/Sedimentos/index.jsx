@@ -31,7 +31,7 @@ export function Sedimentos() {
 
     return(
         <>
-            <header  className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-white drop-shadow-md z-20 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <header  className={`hidden fixed md:flex px-6 h-[56px] w-full justify-between items-center bg-white drop-shadow-md z-20 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 <span className='text-xl'><Link to="/">Home</Link></span>
                 <RiMenu3Line 
                     onClick={() => {
@@ -43,7 +43,7 @@ export function Sedimentos() {
 
             {
                 handleMenu && (
-                    <div className='h-[100vh] w-[100vw] bg-[rgba(0,0,0,.2)] absolute top-0 right-0 z-50 p-5'>
+                    <div className='h-[100vh] w-[100vw] bg-[rgba(0,0,0,.2)] fixed top-0 right-0 z-50 p-5'>
                         <div className='h-[100vh] w-[80vw] bg-white absolute top-0 right-0 z-50 p-5'>
                             <div>
                                 <AiOutlineClose 
@@ -56,18 +56,18 @@ export function Sedimentos() {
                             <ul className='flex flex-col gap-5 mt-7'>
                                 <Link to='/ignea' className='border-b-2 border-zinc-040 pb-2'>Ignea</Link>
                                 <Link to='/metaforfica' className='border-b-2 border-zinc-040 pb-2'>Metaforfica</Link>
-                                <Link to='/sedimentos' className='border-b-2 border-zinc-040 pb-2'>Sedimentar</Link>
+                                <Link to='/sedimentos' onClick={() => setHandleMenu(!handleMenu)} className='border-b-2 border-zinc-040 pb-2'>Sedimentar</Link>
                             </ul>
                         </div>
+                        <div className='h-[100vh] w-[20vw] bg-transparent fixed top-0 left-0 z-60' onClick={() => setHandleMenu(!handleMenu)}></div>
                     </div>
                 )
             }
 
-            <div className={`flex w-full h-24 items-center justify-center ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <div className={`flex w-full h-24 pt-24 mb-12 items-center justify-center ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 <h1 className='text-3xl text-zinc-700'>Rochas sedimentares</h1>
             </div>
             
-
             <div className={`flex justify-evenly flex-wrap pr-[2%] pl-[2%] gap-2 ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 {
                     sedimentos.map((post) => {
@@ -87,6 +87,104 @@ export function Sedimentos() {
                     
                 }
             </div>
+
+
+            {
+                sedimentos.length <= 0 && (
+                    <div className='flex justify-evenly flex-wrap pr-[2%] pl-[2%] gap-2'>
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4 flex-col justify-end">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4 flex-col justify-end">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="border border-blue-300 shadow p-4 max-w-sm flex flex-col justify-end mx-auto w-[96%] h-52 rounded smin:w-[46%]">
+                            <div className="animate-pulse flex space-x-4 flex-col justify-end">
+                                <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
 
             <footer className='h-16 bg-zinc-50 text-zinc-600 flex justify-center items-center mt-6'>
                 Copyright 2022 | Schwanke
