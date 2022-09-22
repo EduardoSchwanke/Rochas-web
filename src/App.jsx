@@ -30,7 +30,16 @@ export function App() {
         <Route path="/ignea" element={<Ignea />}></Route>
         <Route path="/metaforfica" element={<Metaforfica />}></Route>
       </Routes>
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/sedimentos">
+            <Redirect to="/sedimentos" />
+          </Route>
+        </Switch>
     </BrowserRouter>
+
   )
 }
  
