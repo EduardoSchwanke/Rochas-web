@@ -5,7 +5,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Redirect
 } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { DashboardPost } from "./pages/DashboardPost";
@@ -13,7 +12,6 @@ import { Sedimentos } from "./pages/Sedimentos";
 
 import { Ignea } from "./pages/Ignea";
 import { Metaforfica } from "./pages/Metaforfica";
-import { Switch } from "@headlessui/react";
 
 
 export function App() {

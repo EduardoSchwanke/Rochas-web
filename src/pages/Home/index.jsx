@@ -43,7 +43,7 @@ export function Home() {
 
     return (
         <>
-            <header  className={`hidden md:flex px-6 h-[56px] w-full justify-between items-center bg-white drop-shadow-md z-20 fixed ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
+            <header  className={`hidden md:flex px-6 h-[48px] w-full justify-between items-center bg-white drop-shadow-md z-20 fixed ${!handleMenu ? 'blur-none' : 'blur-[1px]'}`}>
                 <span className='text-xl'>Home</span>
                 <RiMenu3Line 
                     onClick={() => {
@@ -55,7 +55,7 @@ export function Home() {
 
             {
                 handleMenu && (
-                    <div className='h-[100vh] w-[100vw] bg-[rgba(0,0,0,.2)] absolute top-0 right-0 z-50 p-5'>
+                    <div className={`h-[100vh] w-[100vw] bg-[rgba(0,0,0,.2)] absolute top-0 z-50 p-5 transition-all ${handleMenu ? 'right-0' : 'right-[-100%]'}`}>
                         <div className='h-[100vh] w-[80vw] bg-white absolute top-0 right-0 z-50 p-5'>
                             <div>
                                 <AiOutlineClose 
@@ -84,8 +84,8 @@ export function Home() {
                         <p className='px-[2%]'>Lorem ipsum dolor sit amet, consectetur Ut volutpat fringilla lorem, sit amet tincidunt ipsum porta quis. Mauris nec consectetur lectus. Nullam ante elit, eleifend quis dignissim in, aliquam eu eros.</p>
                         
                     </section>
-                    <div className='flex w-[100vw] h-28 absolute bottom-0 justify-center bg-white drop-shadow-h'>
-                        <IoChevronDown className='text-black text-3xl animate-bounce mt-5'/>
+                    <div className='flex w-[100vw] h-28 absolute bottom-0 justify-center'>
+                        <IoChevronDown className='text-black text-3xl animate-bounce mt-5 bg-white drop-shadow-lg rounded-full'/>
                     </div>
                 </SwiperSlide>
                 
